@@ -20,8 +20,8 @@ public:
 
     virtual ~Multimedia(){};
 
-    void setName(const string& name){name = name ; }
-    void setDir(const string& dir) {dir = dir ; }
+    void setName(const string &name_){ name = name_ ; }
+    void setDir(const string &dir_) {dir = dir_ ; }
 
     string getName() const {return name ; }
     string getDir() const {return dir ; }
@@ -29,6 +29,9 @@ public:
     virtual void show(ostream & s);
 
     virtual void playMultimedia()const;
+
+    virtual void write(ostream &s)const;
+    virtual void read(istream &is);
     };
 
 

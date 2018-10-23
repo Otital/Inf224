@@ -28,13 +28,32 @@ Film& Film::operator= (const Film& from){
 
 void Film::show(ostream & s){
     Video::show(s);
-    s<<"Chapiters duration\n";
-    int i = chaptersnumber_ ;
-    cout << "showFilm_\n";
-    const int *pnt = getFilm();
+    s<<"Chapiters duration ";
+    cout << "showFilm_ ";
+    const int *pnt = getChapters();
     while (*pnt){
-        s<<chaptersnumber_-i<<" "<<*pnt<<"\n";
-        i--;
+        s<<*pnt<<" ";
         pnt++;
     }
+}
+
+
+void Film::write(ostream &s)const{
+  s<<"FILM\n";
+  Video::write(s);
+  s << getChaptersNum() << '\n';
+
+ for(int i = 0; i < getChaptersNum(); i++)
+   s << chapters[i] << '\n';
+}
+void Film::read(istream &is){
+  Video::read(is);
+  string temp;
+  getline(is,temp);
+  chaptersnumber_ = atoi(temp.c_str());
+  chapters = new int[chaptersnumber_];
+  for(int i=0;i<getChaptersNum();i++){
+    getline(is,temp);
+    chapters[i] = atoi(temp.c_str());
+  }
 }

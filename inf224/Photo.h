@@ -24,6 +24,8 @@ public:
     double getLongitud() const {return longitud ; }
     void show(ostream & s);
     void playMultimedia() const;
+    void write(ostream &s)const;
+    void read(istream &is);
 };
 
 #endif // PHOTO_H

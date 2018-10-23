@@ -2,7 +2,7 @@
 
 void Group::show(ostream &s){
   s << "Groupe Name:";
-  s << getGroupName() << '\n';
+  s << getGroupName() << " ";
   for (iterator it = begin(); it != end(); ++it){
       (*it)->show(s);
     }

@@ -22,6 +22,8 @@ public:
     int getDuration() const {return duration ; }
     virtual void show(ostream & s);
     void playMultimedia() const;
+    void write(ostream &s)const;
+    void read(istream &is);
 
 };
 #endif // VIDEO_H

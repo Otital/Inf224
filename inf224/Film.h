@@ -27,13 +27,16 @@ public:
     ~Film(){
       delete [] chapters;
     }
-    void setFilm(int *chapters_, int chaptersnumber_ ){
+    void setChapters(const int *chapters_, int chaptersnumber_ ){
       for(int k=0 ; k < chaptersnumber_ ; k++){
           chapters[k] = chapters_[k];
         }
       }
-    const int * getFilm() const {return chapters ; }
+    const int * getChapters() const {return chapters ; }
+    const int getChaptersNum() const{return chaptersnumber_;}
     void show(ostream & s);
+    void write(ostream &s)const;
+    void read(istream &is);
 };
 
 #endif // FILM_H
