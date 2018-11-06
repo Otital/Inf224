@@ -1,0 +1,35 @@
+Oscar MARTINEZ 2018
+
+Question:
+1)
+Comme pour la fonction d'affichage, la fonction pour jouer l'objet ne modifie
+pas l'objet et elle doit être déclarée dans les classes Photo et Video et dans
+la classe de base afin de permettre un appel polymorphique sur la hiérarchie de
+classes. Cependant, contrairement à la fonction d'affichage, elle ne peut pas
+avoir d'implementation au niveau de la classe de base (car a priori chaque type
+d'objet nécessite un utilitaire différent pour être joué).
+Comment appelle-t'on ce type de méthode et comment faut-il les déclarer ?
+
+R/ On les appelle méthodes virtuelles constantes, la partie virtuelle indique
+que ne peut pas être implemntée au niveau de classe base donc doit être reécrite
+par les sous-classes. La partie constante ne permet pas de modifie les objets.
+
+Déclaration:
+  virtual void playMultimedia()const;
+
+2)Il ne sera plus possible d'instancer des objets de la classe de base. Pourquoi ?
+
+R/ La classe base a des méthodes virtuelles et donc est une classe abstraite qui
+ne peut pas avoir instances (elles auront besoin de la redéfinition des méthodes).
+
+3) Quelle est la propriété caractéristique de l'orienté objet qui permet de faire cela ?
+Qu'est-il spécifiquement nécessaire de faire dans le cas du C++ ? Quel est le
+type des éléments du tableau : est-ce que ce tableau contient les objets ou des
+pointeurs vers ces objets ? Pourquoi ? Comparer à Java.
+R/ la programmation orienté objet permet de voir les classes filles comme les
+bases grâce au polymorphisme. En C++ il y a besoin d'ajouter les mot clé virtual
+au méthodes de la classe de base, qui ne doivent pas être appellées sinon sa
+redéfinition dans les sou-classes.
+Le tableau contient les pointeurs 
+
+4)
